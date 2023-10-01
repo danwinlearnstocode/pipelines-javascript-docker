@@ -12,6 +12,7 @@ pool:
 variables:
   imageName: 'pipelines-javascript-docker'
   dockerHub: 'danwin-dockerhub'
+  docker-id: 'danwinfrncis'
   tag: 'test'
 
 steps:
@@ -21,5 +22,5 @@ steps:
     command: buildAndPush
     containerRegistry: $(dockerHub)
     Dockerfile: app/Dockerfile
-    repository: $(dockerHub)/$(imageName)
+    repository: $(docker-id)/$(imageName)
     tags: $(tag)
